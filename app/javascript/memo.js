@@ -12,7 +12,7 @@ const buildHTML = (XHR) => {
   return html;
 };
 
-function post() {
+function post (){
   const form = document.getElementById("form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -25,13 +25,13 @@ function post() {
       if (XHR.status != 200) {
         alert(`Error ${XHR.status}: ${XHR.statusText}`);
         return null;
-      }
+      };
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
-      list.insertAdjacentHTML("afterbegin", buildHTML(XHE));
+      list.insertAdjacentHTML("afterend", buildHTML(XHR));
       formText.value = "";
     };
   });
-}
+};
 
-window.addEventListener("turbo:load", post);
+window.addEventListener('turbo:load', post);
